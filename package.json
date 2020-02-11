@@ -1,0 +1,25 @@
+{
+    "name": "glssyntax",
+    "displayName": "GlsSyntax",
+    "description": "glStudio syntax highlightning",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gls",
+            "aliases": ["Gls", "gls"],
+            "extensions": [".gls"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gls",
+            "scopeName": "source.gls",
+            "path": "./syntaxes/gls.tmLanguage.json"
+        }]
+    }
+}
