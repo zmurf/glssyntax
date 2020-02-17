@@ -8,23 +8,242 @@
 		}
 	],
 	"repository": {
-		"stringblock": {
-			"begin": "\\#$STRING_START$#",
+	"stringblock": {
+			"begin": "#\\$STRING_START\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "support.class"
+					"name": "punctuation.definition.list.begin.markdown"
 				}
 			},
-			"end": "\\#$STRING_END$#",
+			"end": "STRING_END\\$#",
 			"endCaptures": {
 				"0": {
-					"name": "support.class"
+					"name": "punctuation.definition.list.begin.markdown"
 				}
 			},
-			"name": "support.class",
+			"name": "punctuation.definition.list.begin.markdown",
 			"patterns": [
 				{
-					"include": "#constant"
+					"include": "#value"
+				},
+				{
+					"include": "#blockcomment"
+				},
+				{
+					"include": "#blockitemtype"
+				},
+				{
+					"include": "#blocktype"
+				},
+				{
+					"include": "#blockname"
+				},
+				{
+					"include": "#blockisconst"
+				},
+				{
+					"include": "#blockargs"
+				},
+				{
+					"include": "#blockbody"
+				},
+				{
+					"include": "#blockgenbody"
+				},
+				{
+					"include": "#singlequotestring"
+				},
+				{
+					"include": "#xml"
+				},
+				{
+					"include": "#keyword"
+				},
+				{
+					"include": "#cppcall"
+				}
+			]
+		},
+		"blockcomment": {
+			"begin": "COMMENT\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "comment.block.json",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"blockitemtype": {
+			"begin": "ITEM_TYPE\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#number"
+				}
+			]
+		},
+		"blockisconst": {
+			"begin": "METHOD_IS_CONST\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#number"
+				}
+			]
+		},
+		"blockppp": {
+			"begin": "PPP\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#number"
+				}
+			]
+		},
+		"blockgenbody": {
+			"begin": "GEN_BODY\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#number"
+				}
+			]
+		},
+		"blocktype": {
+			"begin": "TYPE\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "string",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"blockname": {
+			"begin": "NAME\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "string",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"blockargs": {
+			"begin": "ARGS\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "string",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"blockbody": {
+			"begin": "BODY\\$#",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"end": "#\\$",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.list.begin.markdown"
+				}
+			},
+			"name": "string",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				},
+				{
+					"include": "#comments"
 				}
 			]
 		},
@@ -119,8 +338,244 @@
 			"match": "(?<![<>%&=$\"\\/.()])(?!.*[:<>%&=$\"\\/.()])(?!\\d)(\\w+)",
 			"name": "support.class"		
 		},
+		"variable": {
+			"match": "(\\w+=)",
+			"name": "keyword.operator"
+		},
+		"variableref": {
+			"begin": "%",
+			"beginCaptures": {
+				"0": {
+					"name": "constant.character.escape"
+				}
+			},
+			"end": "%",
+			"endCaptures": {
+				"0": {
+					"name": "constant.character.escape"
+				}
+			},
+			"name": "constant.character.escape",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"singlequotestring": {
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#value"
+				}
+			]
+		},
+		"xmlheader": {
+			"begin": "<?xml",
+			"beginCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"end": "?>",
+			"endCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"include": "#singlequotestring"
+				}
+			]
+		},
+		"xmlopen": {
+			"begin": "<",
+			"beginCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"end": ">",
+			"endCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"include": "#singlequotestring"
+				}
+			]
+		},
+		"xmlclose": {
+			"begin": "</",
+			"beginCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"end": ">",
+			"endCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"include": "#singlequotestring"
+				}
+			]
+		},
+		"xmlselfclose": {
+			"begin": "<",
+			"beginCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"end": "/>",
+			"endCaptures": {
+				"0": {
+					"name": "support.function"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"include": "#singlequotestring"
+				}
+			]
+		},
+		"xmlcomment":
+		{
+			"begin": "<!--",
+			"beginCaptures": {
+				"0": {
+					"name": "comment.block.json"
+				}
+			},
+			"end": "-->",
+			"endCaptures": {
+				"0": {
+					"name": "comment.block.json"
+				}
+			},
+			"name": "comment.block.json",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"templated": {
+			"begin": "(\\w+)(<)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				},
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"end": ">",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"keyword": {
+			"match": "(\\w+:)",
+			"name": "keyword.operator"
+		},
+		"path": {
+		},
+		"pointer": {
+		},
+		"class": {
+		},
+		"method": {
+		},
+		"cppcall": {
+			"patterns": [
+				{
+					"include": "#pointer"
+				},
+				{
+					"include": "#class"
+				},
+				{
+					"include": "#method"
+				}
+			]
+		},
+		"xml": {
+			"patterns": [
+				{
+					"include": "#xmlheader"
+				},
+				{
+					"include": "#xmlopen"
+				},
+				{
+					"include": "#xmlclose"
+				},
+				{
+					"include": "#xmlselfclose"
+				},
+				{
+					"include": "#xmlcomment"
+				}
+			]
+		},
 		"value": {
 			"patterns": [
+				{
+					"include": "#path"
+				},
+				{
+					"include": "#variable"
+				},
+				{
+					"include": "#variableref"
+				},
+				{
+					"include": "#templated"
+				},
 				{
 					"include": "#comments"
 				},
