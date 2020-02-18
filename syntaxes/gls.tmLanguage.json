@@ -12,16 +12,16 @@
 			"begin": "#\\$STRING_START\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "STRING_END\\$#",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
-			"name": "punctuation.definition.list.begin.markdown",
+			"name": "variable.language",
 			"patterns": [
 				{
 					"include": "#value"
@@ -68,16 +68,16 @@
 			"begin": "COMMENT\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
-			"name": "comment.block.json",
+			"name": "comment",
 			"patterns": [
 				{
 					"include": "#stringcontent"
@@ -88,13 +88,13 @@
 			"begin": "ITEM_TYPE\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "support.function",
@@ -108,13 +108,13 @@
 			"begin": "METHOD_IS_CONST\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "support.function",
@@ -128,13 +128,13 @@
 			"begin": "PPP\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "support.function",
@@ -148,13 +148,13 @@
 			"begin": "GEN_BODY\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "support.function",
@@ -168,13 +168,13 @@
 			"begin": "TYPE\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "string",
@@ -188,13 +188,13 @@
 			"begin": "NAME\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "string",
@@ -208,13 +208,13 @@
 			"begin": "ARGS\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "string",
@@ -228,13 +228,13 @@
 			"begin": "BODY\\$#",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"end": "#\\$",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.list.begin.markdown"
+					"name": "variable.language"
 				}
 			},
 			"name": "string",
@@ -244,6 +244,9 @@
 				},
 				{
 					"include": "#comments"
+				},
+				{
+					"include": "#cppcall"
 				}
 			]
 		},
@@ -259,7 +262,7 @@
 		},
 		"propertyname": {
 			"match": "(?<!\\S)(?!\\d)([\\w$]+)(?::)(?!:)",
-			"name": "support.type.property-name"
+			"name": "variable"
 		},
 		"comments": {
 			"patterns": [
@@ -267,55 +270,55 @@
 					"begin": "/\\*\\*(?!/)",
 					"captures": {
 						"0": {
-							"name": "punctuation.definition.comment.json"
+							"name": "comment"
 						}
 					},
 					"end": "\\*/",
-					"name": "comment.block.documentation.json"
+					"name": "comment"
 				},
 				{
 					"begin": "/\\*",
 					"captures": {
 						"0": {
-							"name": "punctuation.definition.comment.json"
+							"name": "comment"
 						}
 					},
 					"end": "\\*/",
-					"name": "comment.block.json"
+					"name": "comment"
 				},
 				{
 					"captures": {
 						"1": {
-							"name": "punctuation.definition.comment.json"
+							"name": "comment"
 						}
 					},
 					"match": "(//).*$\\n?",
-					"name": "comment.line.double-slash.js"
+					"name": "comment"
 				}
 			]
 		},
 		"constant": {
 			"match": "\\b(?:true|false|null)\\b",
-			"name": "constant.language.json"
+			"name": "constant.language"
 		},
 		"number": {
 			"match": "(?x)        # turn on extended mode\n  -?        # an optional minus\n  (?:\n    0       # a zero\n    |       # ...or...\n    [1-9]   # a 1-9 character\n    \\d*     # followed by zero or more digits\n  )\n  (?:\n    (?:\n      \\.    # a period\n      \\d+   # followed by one or more digits\n    )?\n    (?:\n      [eE]  # an e character\n      [+-]? # followed by an option +/-\n      \\d+   # followed by one or more digits\n    )?      # make exponent optional\n  )?        # make decimal portion optional",
-			"name": "constant.numeric.json"
+			"name": "constant.numeric"
 		},
 		"string": {
 			"begin": "\"",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.json"
+					"name": "string"
 				}
 			},
 			"end": "\"",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.json"
+					"name": "string"
 				}
 			},
-			"name": "string.quoted.double.json",
+			"name": "string",
 			"patterns": [
 				{
 					"include": "#stringcontent"
@@ -326,16 +329,16 @@
 			"patterns": [
 				{
 					"match": "(?x)                # turn on extended mode\n  \\\\                # a literal backslash\n  (?:               # ...followed by...\n    [\"\\\\/bfnrt]     # one of these characters\n    |               # ...or...\n    u               # a u\n    [0-9a-fA-F]{4}) # and four hex digits",
-					"name": "constant.character.escape.json"
+					"name": "constant.character.escape"
 				},
 				{
 					"match": "\\\\.",
-					"name": "invalid.illegal.unrecognized-string-escape.json"
+					"name": "invalid"
 				}
 			]
 		},
 		"freename": {
-			"match": "(?<![<>%&=$\"\\/.()])(?!.*[:<>%&=$\"\\/.()])(?!\\d)(\\w+)",
+			"match": "(?<![<>\\\\%&\\.=$\\\"()\\/])(?!.*[:<>\\\\%&=$\\\"()\\/])(?!\\d)(\\w+)",
 			"name": "support.class"		
 		},
 		"variable": {
@@ -474,21 +477,20 @@
 				}
 			]
 		},
-		"xmlcomment":
-		{
+		"xmlcomment": {
 			"begin": "<!--",
 			"beginCaptures": {
 				"0": {
-					"name": "comment.block.json"
+					"name": "comment"
 				}
 			},
 			"end": "-->",
 			"endCaptures": {
 				"0": {
-					"name": "comment.block.json"
+					"name": "comment"
 				}
 			},
-			"name": "comment.block.json",
+			"name": "comment",
 			"patterns": [
 				{
 					"include": "#stringcontent"
@@ -519,16 +521,60 @@
 			]
 		},
 		"keyword": {
-			"match": "(\\w+:)",
+			"match": "(\\w+:)(?!:)",
 			"name": "keyword.operator"
 		},
 		"path": {
+			"match": "(\\.*\/+[\\.\/\\w]*\\w+)$",
+			"name": "keyword.control"
+		},
+		"file": {
+			"match": "\\w+\\.(jpg|png|h|cpp|gls|py|sh)$",
+			"name": "keyword.control"
 		},
 		"pointer": {
+			"begin": "(\\w+)(->)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				},
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"end": "\\w+",
+			"endCaptures": {
+				"0": {
+					"name": "support.class"
+				}
+			}
 		},
 		"class": {
+			"match": "::",
+			"name": "keyword.operator"
 		},
 		"method": {
+			"begin": "(\\w+)(\\()",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				},
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
 		},
 		"cppcall": {
 			"patterns": [
@@ -540,6 +586,30 @@
 				},
 				{
 					"include": "#method"
+				}
+			]
+		},
+		"freetextcall": {
+			"match": "(?:(\\s|:))(?!.*\\.(jpg$|png$|h$|cpp$|gls$|py$|sh$))(?!\\d)(\\w+\\.+[\\.\\w]*)$",
+			"name": "support.class"
+		},
+		"freeparentheses": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#stringcontent"
 				}
 			]
 		},
@@ -564,6 +634,15 @@
 		},
 		"value": {
 			"patterns": [
+				{
+					"include": "#freeparentheses"
+				},
+				{
+					"include": "#freetextcall"
+				},
+				{
+					"include": "#file"
+				},
 				{
 					"include": "#path"
 				},
@@ -596,6 +675,5 @@
 				}
 			]
 		}
-	}
-	
+	}	
 }
