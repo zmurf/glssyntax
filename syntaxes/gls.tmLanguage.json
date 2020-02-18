@@ -342,7 +342,7 @@
 			"name": "support.class"		
 		},
 		"variable": {
-			"match": "(\\w+=)",
+			"match": "(\\w+\\s*=)",
 			"name": "keyword.operator"
 		},
 		"variableref": {
