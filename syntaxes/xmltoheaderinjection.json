@@ -262,6 +262,86 @@
 					"include": "#stringcontent"
 				}
 			]
+        },
+        "templated": {
+			"begin": "(\\w+)(<)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				},
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"end": ">",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+        },
+        "pointer": {
+			"begin": "(\\w+)(->)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				},
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"end": "\\w+",
+			"endCaptures": {
+				"0": {
+					"name": "support.class"
+				}
+			}
+		},
+		"class": {
+			"match": "::",
+			"name": "keyword.operator"
+		},
+		"method": {
+			"begin": "(\\w+)(\\()",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				},
+				"1": {
+					"name": "support.class"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.operator"
+				}
+			},
+			"name": "support.function",
+			"patterns": [
+				{
+					"include": "#stringcontent"
+				}
+			]
+		},
+		"cppcall": {
+			"patterns": [
+				{
+					"include": "#pointer"
+				},
+				{
+					"include": "#class"
+				},
+				{
+					"include": "#method"
+				}
+			]
 		},
         "value": {
 			"patterns": [
@@ -288,6 +368,15 @@
                 },
                 {
                     "include": "#stringcontent"	
+                },
+				{
+					"include": "#templated"
+                },
+                {
+                    "include": "#method"	
+                },
+				{
+					"include": "#cppcall"
                 }
             ]
         }
