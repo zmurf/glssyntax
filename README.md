@@ -2,7 +2,7 @@
 
 ## Features
 
-Provides simple syntax highlighting for glStudio .gls files.
+Provides simple syntax highlighting for glStudio .gls files and genereated xml code inside c/cpp header files.
 
 ## Requirements
 
@@ -14,10 +14,14 @@ No.
 
 ## Known Issues
 
-Probably a lot of them...
+Some... probably a lot of unknown issues...
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.1
 
 Initial release
+
+### 0.0.2
+
+Added xml injection to C comment block 
