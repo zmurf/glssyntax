@@ -25,7 +25,7 @@
         {
             "path": "./syntaxes/xmltoheaderinjection.json",
             "scopeName": "xml-block.injection",
-            "injectTo": ["source.cpp", "source.h"]
+            "injectTo": ["source.c", "source.cpp", "source.h"]
         }
      ]
     },

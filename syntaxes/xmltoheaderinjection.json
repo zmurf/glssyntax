@@ -1,6 +1,6 @@
 {
     "scopeName": "xml-block.injection",
-    "injectionSelector": "R:comment.block.cpp",
+    "injectionSelector": ["R:comment.block.cpp", "R:comment.block.c"],
     "patterns": [
         {
             "include": "#generatedblock"
