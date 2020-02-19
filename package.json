@@ -1,7 +1,7 @@
 {
     "name": "glssyntax",
     "displayName": "GlsSyntax",
-    "description": "glStudio syntax highlightning",
+    "description": "glStudio syntax highlighting",
     "version": "0.0.2",
     "publisher": "slamcodelaboratories",
     "engines": {
