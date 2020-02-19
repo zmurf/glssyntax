@@ -28,5 +28,9 @@
             "injectTo": ["source.cpp", "source.h"]
         }
      ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zmurf/glssyntax.git"
     }
 }
