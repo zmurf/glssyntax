@@ -45,5 +45,5 @@
         "type": "git",
         "url": "https://github.com/zmurf/glssyntax.git"
     },
-    "icon": "./icon.png"
+    "icon": "icon.png"
 }
