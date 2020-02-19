@@ -2,7 +2,7 @@
     "name": "glssyntax",
     "displayName": "GlsSyntax",
     "description": "glStudio syntax highlightning",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "slamcodelaboratories",
     "engines": {
         "vscode": "^1.42.0"
@@ -11,23 +11,35 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "gls",
-            "aliases": ["Gls", "gls"],
-            "extensions": [".gls"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "gls",
-            "scopeName": "source.gls",
-            "path": "./syntaxes/gls.tmLanguage.json"
-        },
-        {
-            "path": "./syntaxes/xmltoheaderinjection.json",
-            "scopeName": "xml-block.injection",
-            "injectTo": ["source.c", "source.cpp", "source.h"]
-        }
-     ]
+        "languages": [
+            {
+                "id": "gls",
+                "aliases": [
+                    "Gls",
+                    "gls"
+                ],
+                "extensions": [
+                    ".gls"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gls",
+                "scopeName": "source.gls",
+                "path": "./syntaxes/gls.tmLanguage.json"
+            },
+            {
+                "path": "./syntaxes/xmltoheaderinjection.json",
+                "scopeName": "xml-block.injection",
+                "injectTo": [
+                    "source.c",
+                    "source.cpp",
+                    "source.h"
+                ]
+            }
+        ]
     },
     "repository": {
         "type": "git",
