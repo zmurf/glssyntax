@@ -3,6 +3,7 @@
     "displayName": "GlsSyntax",
     "description": "glStudio syntax highlightning",
     "version": "0.0.1",
+    "publisher": "slamcodelaboratories",
     "engines": {
         "vscode": "^1.42.0"
     },
